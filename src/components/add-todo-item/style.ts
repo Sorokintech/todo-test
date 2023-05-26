@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  width: 400px;
+  width: 500px;
   display: flex;
   flex-direction: row;
-  /* gap: 10px; */
   align-items: center;
   justify-content: center;
 `;
@@ -14,12 +13,12 @@ export const AddInputLabel = styled.label`
 `;
 export const AddInput = styled.input`
   width: 90%;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border: none;
   border-radius: 4px;
 `;
 export const AddButton = styled.button`
-  padding: 5px 15px;
+  padding: 10px 20px;
   background-color: #fff;
   border: none;
   border-radius: 4px;

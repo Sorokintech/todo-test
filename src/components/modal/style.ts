@@ -22,10 +22,10 @@ export const Wrapper = styled.div`
 `;
 
 export const ModalBlock = styled.div`
-  background-color: #fff;
+  background-color: #ffffcc;
   position: relative;
   z-index: 5;
-  margin: 0 30%;
+  margin: 0 35%;
   top: 30%;
   opacity: 1;
   border-radius: 4px;
@@ -33,18 +33,28 @@ export const ModalBlock = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const ModalBlockTop = styled.div`
+  padding: 10px 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+`;
 export const Icon = styled.img`
   padding: 5px;
   width: 18px;
   height: 18px;
   cursor: pointer;
 `;
-export const ModalContentInput = styled.input`
-  padding: 10px 40px;
+export const ModalContentLabel = styled.label`
+  box-sizing: border-box;
+  margin: 10px 10px;
 `;
-export const ModalContentLabel = styled.label``;
-export const ModalCloseBtn = styled.button`
-  width: 10px;
-  height: 10px;
+export const ModalContentInput = styled.input`
+  box-sizing: border-box;
+  padding: 10px 20px;
+  width: 100%;
+  border: 1px solid #000;
+  border-radius: 4px;
 `;
 export const ModalTitle = styled.div``;

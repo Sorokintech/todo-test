@@ -25,23 +25,27 @@ export const EditTodoModal: React.FC<ModalProps> = ({
     }
   };
   const saveTodoChanges = () => {
+    setTodoContent(todoContent);
     onClose();
     todo.updateTodo(id, todoContent);
   };
   console.log(content);
+  React.useEffect(() => {
+    setTodoContent(content);
+  }, [content]);
 
   return isOpen ? (
     <S.Container>
       <S.Wrapper ref={overlayRef} onClick={handleOverlayClick}>
         <S.ModalBlock key={id}>
-          {/* <S.ModalCloseBtn }> */}
-          <S.Icon
-            src="/icons/save.png"
-            alt="close-modal-button"
-            onClick={saveTodoChanges}
-          ></S.Icon>
-          {/* </S.ModalCloseBtn> */}
-          <S.ModalTitle>{title}</S.ModalTitle>
+          <S.ModalBlockTop>
+            <S.Icon
+              src="/icons/save.png"
+              alt="close-modal-button"
+              onClick={saveTodoChanges}
+            ></S.Icon>
+            <S.ModalTitle>{title}</S.ModalTitle>
+          </S.ModalBlockTop>
           <S.ModalContentLabel>
             <S.ModalContentInput
               type="text"
