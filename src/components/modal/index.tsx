@@ -18,22 +18,23 @@ export const EditTodoModal: React.FC<ModalProps> = ({
   content,
 }) => {
   const [todoContent, setTodoContent] = React.useState(content);
+  // Hook to set modal to be able to close on click outside. Clicking outside will NOT save any changes in todo content
   const overlayRef = React.useRef(null);
   const handleOverlayClick = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
     if (e.target === overlayRef.current) {
       onClose();
     }
   };
+  //Savings changes of the todo content, if any
   const saveTodoChanges = () => {
     setTodoContent(todoContent);
     onClose();
     todo.updateTodo(id, todoContent);
   };
-  console.log(content);
+  //Updating content that has been passed to modal from todo
   React.useEffect(() => {
     setTodoContent(content);
   }, [content]);
-
   return isOpen ? (
     <S.Container>
       <S.Wrapper ref={overlayRef} onClick={handleOverlayClick}>

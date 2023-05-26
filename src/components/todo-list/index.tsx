@@ -1,20 +1,27 @@
 import * as S from "./style";
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { observer } from "mobx-react-lite";
 import todo from "../../store/todo";
 import { EditTodoModal } from "../modal";
 import { ThemeProvider } from "styled-components";
+import "../../localize/config";
+import { useTranslation } from "react-i18next";
 
 export const TodoList: React.FC = observer(() => {
   const [isModalOpen, setModalState] = React.useState(false);
+  //Content to pass to modal component
   const [todoContent, setTodoContent] = React.useState("");
+  //Id to pass to modal component
   const [todoId, setTodoId] = React.useState(0);
+  //Function that toggle edit modal
   const toggleModal = (text: string, id: number) => {
     setModalState(!isModalOpen);
     setTodoContent(text);
     setTodoId(id);
-    console.log(text);
   };
+  //language change
+  const { t } = useTranslation();
+  //styles theme change upon todo status : DONE/UNDONE
   const toBeDone = {
     main: "#ffffcc",
     text: "none",
@@ -70,7 +77,7 @@ export const TodoList: React.FC = observer(() => {
         })}
         <EditTodoModal
           id={todoId}
-          title={"Редактировать задачу"}
+          title={t("modal")}
           isOpen={isModalOpen}
           onClose={() => {
             toggleModal(todoContent, todoId);

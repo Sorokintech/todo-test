@@ -4,6 +4,11 @@ export const Wrapper = styled.div`
   width: 500px;
   overflow-y: auto;
   max-height: 80vh;
+  overflow-x: hidden;
+  @media (max-width: 767px) {
+    width: 300px;
+    overflow: none;
+  }
 `;
 export const Container = styled.div``;
 export const SortContainer = styled.div`
@@ -16,8 +21,13 @@ export const Icon = styled.img`
   width: 22px;
   height: 22px;
   cursor: pointer;
-  :hover {
-    transform: scale(1.5);
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.15);
+  }
+  @media (max-width: 767px) {
+    width: 15px;
+    height: 15px;
   }
 `;
 export const EditContainer = styled.div`
@@ -34,8 +44,9 @@ export const Item = styled.div`
   align-items: center;
   text-decoration: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.main};
-  /* background-color: #ffffcc; //NOT DONE */
-  /* background-color: #b3ffb3; // DONE */
+  @media (max-width: 767px) {
+    margin-bottom: 5px;
+  }
   :nth-child(1) {
     grid-column: span 1;
   }
@@ -49,5 +60,3 @@ export const Item = styled.div`
     grid-column: span 1;
   }
 `;
-
-// увеличить размер всего до 125%

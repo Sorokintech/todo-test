@@ -6,30 +6,10 @@ export interface TodoInterface {
 }
 class Todo {
   TodoArr: TodoInterface[] = [
-    { id: 1, title: "Купить корм коту", completed: false },
+    { id: 1, title: "Купить корм котику", completed: false },
     { id: 2, title: "Записаться к врачу", completed: false },
     { id: 3, title: "Поставить стирку", completed: false },
     { id: 4, title: "Забрать заказ с OZON", completed: false },
-    // { id: 5, title: "Купить корм коту", completed: false },
-    // { id: 6, title: "Записаться к врачу", completed: false },
-    // { id: 7, title: "Поставить стирку", completed: false },
-    // { id: 8, title: "Забрать заказ с OZON", completed: false },
-    // { id: 9, title: "Купить корм коту", completed: false },
-    // { id: 10, title: "Записаться к врачу", completed: false },
-    // { id: 11, title: "Поставить стирку", completed: false },
-    // { id: 4, title: "Забрать заказ с OZON", completed: false },
-    // { id: 1, title: "Купить корм коту", completed: false },
-    // { id: 2, title: "Записаться к врачу", completed: false },
-    // { id: 3, title: "Поставить стирку", completed: false },
-    // { id: 4, title: "Забрать заказ с OZON", completed: false },
-    // { id: 1, title: "Купить корм коту", completed: false },
-    // { id: 2, title: "Записаться к врачу", completed: false },
-    // { id: 3, title: "Поставить стирку", completed: false },
-    // { id: 4, title: "Забрать заказ с OZON", completed: false },
-    // { id: 1, title: "Купить корм коту", completed: false },
-    // { id: 2, title: "Записаться к врачу", completed: false },
-    // { id: 3, title: "Поставить стирку", completed: false },
-    // { id: 4, title: "Забрать заказ с OZON", completed: false },
   ];
   constructor() {
     makeAutoObservable(this);

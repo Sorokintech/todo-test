@@ -1,16 +1,18 @@
 import * as S from "./style";
+import "../../localize/config";
 import React, { ChangeEvent } from "react";
 import todo from "../../store/todo";
+import { useTranslation } from "react-i18next";
 
 export const AddTodoItem: React.FC = () => {
   const [newTodo, setNewTodo] = React.useState("");
-
+  const { t } = useTranslation();
   return (
     <S.Wrapper>
       <S.AddInputLabel>
         <S.AddInput
           type="text"
-          placeholder="Добавить задачу..."
+          placeholder={t("input")}
           value={newTodo}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setNewTodo(event.target.value);
@@ -29,7 +31,7 @@ export const AddTodoItem: React.FC = () => {
           }
         }}
       >
-        Добавить
+        {t("button")}
       </S.AddButton>
     </S.Wrapper>
   );
