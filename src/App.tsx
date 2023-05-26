@@ -5,11 +5,13 @@ import * as S from "./style";
 
 function App() {
   return (
-    <S.Wrapper>
-      <Header />
-      <AddTodoItem />
-      <TodoList />
-    </S.Wrapper>
+    <S.Container>
+      <S.Wrapper>
+        <Header />
+        <AddTodoItem />
+        <TodoList />
+      </S.Wrapper>
+    </S.Container>
   );
 }
 
